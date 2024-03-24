@@ -1,0 +1,226 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0; /* Menetapkan margin secara global ke 0 */
+    padding: 0; /* Menetapkan padding secara global ke 0 */
+    box-sizing: border-box; /* Menetapkan box-sizing ke border-box untuk menghitung dimensi elemen termasuk padding dan border, namun tidak termasuk margin. */
+  }
+  
+  /* Styling body */
+  body {
+    font-family: Arial, sans-serif; /* Menetapkan jenis font untuk teks dalam body */
+    background: linear-gradient( /* Gradien dari abu-abu tua ke abu-abu muda */
+      to bottom,
+      #555555, /* Warna atas dalam gradien */
+      #dddddd /* Warna bawah dalam gradien */
+    ); 
+  }
+  
+  /* Styling container */
+  .container {
+    display: flex; /* Menggunakan model flexbox untuk menyusun isi kontainer */
+    flex-direction: row; /* Menetapkan arah tata letak flexbox ke baris */
+    min-height: 100vh; /* Menetapkan tinggi minimum kontainer sebesar tinggi viewport (100vh) untuk memastikan konten selalu terlihat pada layar */
+  }
+  
+  /* Styling sidebar */
+  .sidebar {
+    background: linear-gradient( /* Membuat latar belakang menggunakan gradien linear dari hitam ke ungu */
+      to bottom,
+      #000000,  /* Warna atas dalam gradien (hitam) */
+      #800080 /* Warna bawah dalam gradien (ungu) */
+    ); 
+    color: #7d7474; /* Menetapkan warna teks */
+    padding: 20px;  /* Menambahkan padding sebesar 20px di sekitar isi sidebar */
+    display: flex; /* Menggunakan model flexbox untuk menyusun isi sidebar */
+    flex-direction: column; /* Menetapkan arah tata letak flexbox ke kolom */
+    justify-content: center; /* Menyusun isi secara vertikal di tengah */
+  }
+  
+  .sidebar nav ul {
+    list-style-type: none; /* Menghilangkan tanda bullet dari daftar (unordered list) */
+  }
+  
+  .sidebar nav ul li {
+    margin-bottom: 10px; /* Menambahkan margin bawah sebesar 10px untuk setiap item dalam daftar */
+  }
+  
+  .sidebar nav ul li a {
+    color: #868088;  /* Menetapkan warna teks untuk tautan di dalam elemen li */
+    text-decoration: none; /* Menghilangkan dekorasi tautan seperti garis bawah */
+    align-items: center; /* Menyusun teks di tengah secara vertikal */
+    text-align: center; /* Mengatur teks menjadi di tengah */
+    display: flex; /* Mengaktifkan flexbox */
+    justify-content: center; /* Menyusun tautan di tengah secara horizontal */
+    padding: 10px 20px; /* Menambahkan ruang di sekitar setiap tautan */
+    font-weight: bold; /* Menjadikan teks tautan menjadi tebal */
+    width: 100%; /* Agar tautan memenuhi lebar kontainer */
+  }
+  
+  .sidebar nav ul li a:hover {
+    text-decoration: underline; /* Menambahkan garis bawah pada tautan ketika kursor berada di atasnya */
+  }
+  
+  /* Styling content */
+  .content {
+    flex-grow: 1; /* Menggunakan semua ruang yang tersedia di kontainer flex, sehingga konten akan memenuhi sisa ruang yang tersedia setelah sidebar */
+    padding: 20px;  /* Menambahkan padding sebesar 20px di sekitar isi konten */
+  }
+  
+  .hero {
+    display: flex; /* Menggunakan model flexbox untuk menyusun isi hero */
+    align-items: center;  /* Menyusun isi secara vertikal di tengah */
+    justify-content: space-between; /* Memberikan ruang di antara elemen */
+    height: 100vh; /* Mengisi tinggi penuh halaman */
+    text-align: left ; /* Mengatur teks agar berada di tengah */
+    flex-direction: row-reverse; /* Mengatur urutan konten agar gambar berada di sebelah kanan */
+    right: 20px; /* Menetapkan jarak dari sisi kanan sebesar 20px */
+  }
+  
+  .hero img {
+    width: 250px; /* Menetapkan lebar gambar sebesar 250 piksel */
+    height: 100px; /* Menetapkan tinggi gambar sebesar 100 piksel */
+    position: absolute; /* Mengatur posisi absolut untuk gambar */
+    right: 10px; /* Menempatkan gambar di kanan halaman */
+  }
+  
+  .hero-content {
+    position: absolute; /* Mengatur posisi elemen relatif terhadap elemen yang berada di luar konteks dokumen, sehingga dapat ditempatkan dengan tepat di dalam elemen tetap atau berputar lainnya */
+    left: 120px; /* Jarak dari kiri */
+    top: 50%; /* Menempatkan konten di tengah secara vertikal */
+    transform: translateY(-50%); /* Menyesuaikan posisi vertikal konten */
+    text-align: left; /* Mengatur teks agar berada di sebelah kiri */
+    max-width: 600px; /* Membatasi lebar konten */
+    padding: 20px; /* Menambahkan padding untuk ruang di sekitar konten */
+  }
+  
+  .hero-content h1 {
+    font-size: 46px;  /* Menetapkan ukuran font 46px untuk elemen h1 di dalam elemen dengan kelas "hero-content" */
+    font-family: "Times New Roman", Times, serif; /* Mengatur font family */
+    margin-bottom: 10px; /* Menambahkan margin bawah sebesar 10px pada elemen h1 di dalam elemen dengan kelas "hero-content" */
+    color: #4b0082; /* Mengatur warna teks menjadi ungu tua */
+    font-weight: normal; /* Membuat teks h1 tidak tebal */
+  }
+  
+  .hero-content h2 {
+    font-size: 30px; /* Menetapkan ukuran font 30px untuk elemen h2 di dalam elemen dengan kelas "hero-content" */
+    margin-bottom: 10px;  /* Menambahkan margin bawah sebesar 10px pada elemen h2 di dalam elemen dengan kelas "hero-content" */
+    font-family: Arial, sans-serif; /* Menentukan jenis font */
+    font-weight: bold; /* Mengatur ketebalan font menjadi bold */
+  }
+  
+  .hero-content p {
+    margin-bottom: 20px;  /* Menambahkan margin bawah sebesar 20px pada elemen p di dalam elemen dengan kelas "hero-content" */
+  }
+  
+  .action-btn {
+    display: inline-block; /* Menjadikan tombol aksi menjadi elemen inline-block agar dapat disusun secara horizontal */
+    padding: 10px 20px; /* Memberikan padding sebesar 10px di atas dan bawah, serta 20px di sisi kiri dan kanan pada tombol aksi */
+    background-color: #1d2935; /* Menetapkan warna latar belakang untuk tombol aksi */
+    color: #fff;  /* Menetapkan warna teks untuk tombol aksi */
+    text-decoration: none; /* Menghilangkan dekorasi tautan pada tombol aksi */
+    border-radius: 30px; /* Nilai border-radius yang besar untuk membuat tombol lonjong */
+  }
+  
+  .action-btn:hover {
+    background-color: #0056b3; /* Mengubah warna latar belakang tombol aksi saat kursor diarahkan ke atasnya */
+  }
+  
+  /* Styling footer */
+  .footer {
+    background-color: #998f8f;  /* Menetapkan warna latar belakang untuk elemen dengan kelas "footer" */
+    color: #f3e5e5; /* Menetapkan warna teks untuk elemen dengan kelas "footer" */
+    padding: 50px; /* Menambahkan padding sebesar 50px di sekitar isi footer */
+    position: fixed; /* Mengatur posisi elemen secara tetap (fixed) agar footer tetap berada di bagian bawah layar */
+    bottom: 0; /* Menempatkan footer di bagian bawah halaman */
+    display: flex; /* Menggunakan model flexbox untuk menyusun isi footer */
+    width: 100%; /* Menetapkan lebar footer agar mengisi seluruh lebar layar */
+    justify-content: center;  /* Menyusun isi footer secara horizontal di tengah */
+    width: calc(100% - 90px); /* Mengurangi lebar sidebar dari lebar total */
+    margin-left: 126px; /* Menambahkan margin kanan yang sama dengan lebar sidebar */
+  }
+  
+  .footer ul {
+    list-style-type: none; /* Menghilangkan tanda bullet dari daftar dalam footer */
+    display: flex; /* Menggunakan model flexbox untuk menyusun isi daftar footer */
+    justify-content: center;  /* Menyusun isi daftar footer secara horizontal di tengah */
+    align-items: center; /* Menyusun ikon dan teks di tengah secara vertikal */
+  }
+  
+  .footer ul li {
+    margin-right: 100px; /* Menambahkan margin kanan sebesar 100px untuk setiap item daftar dalam footer */
+    align-items: center; /* Menyusun ikon di tengah secara vertikal */
+    display: flex; /* Menggunakan model flexbox untuk menyusun isi item daftar footer */
+    flex-direction: column; /* Menetapkan arah tata letak flexbox ke kolom */
+    align-items: center; /* Menyusun ikon dan teks di tengah secara horizontal */
+  }
+  
+  .footer ul li img {
+    width: 35px; /* Menentukan lebar ikon */
+    height: 40px; /* Menentukan tinggi ikon */
+    vertical-align: middle; /* Menyusun gambar secara vertikal di tengah elemen */
+    margin-right: 5px;  /* Menambahkan margin sebesar 5px di sebelah kanan gambar */
+  }
+  
+  .footer ul li a {
+    color: #faf8f8;  /* Menetapkan warna teks untuk tautan di dalam item daftar footer */
+    text-decoration: none; /* Menghilangkan dekorasi tautan seperti garis bawah */
+  }
+  
+  .footer ul li a:hover {
+    text-decoration: underline; /* Menambahkan garis bawah pada tautan saat kursor diarahkan ke atasnya */
+  }
+  
+/* Media query untuk layar dengan lebar maksimum 768px (tablet) */
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Mengubah arah kontainer menjadi kolom */
+    }
+
+    .sidebar {
+        flex-direction: row; /* Mengubah arah sidebar menjadi baris */
+        padding: 20px 0; /* Mengubah padding agar sesuai */
+        width: 100%; /* Menyesuaikan lebar sidebar */
+        position: fixed; /* Memastikan sidebar tetap di atas halaman */
+        top: 0; /* Menempatkan sidebar di bagian atas */
+        left: 0; /* Menempatkan sidebar di bagian kiri */
+        z-index: 999; /* Mengatur z-index untuk menghindari tumpang tindih dengan konten */
+        align-items: center; /* Menyusun elemen di tengah secara horizontal */
+    }
+
+    .sidebar nav ul {
+        display: flex; /* Mengubah list menjadi flex untuk menyusun secara horizontal */
+        flex-wrap: wrap; /* Mengizinkan wrap untuk elemen menu */
+        justify-content: center; /* Menyusun menu di tengah */
+    }
+
+    .sidebar nav ul li {
+        margin: 0 10px; /* Memberikan ruang di antara setiap elemen menu */
+    }
+
+    .hero {
+        display: flex; /* Menggunakan model flexbox untuk menyusun isi hero */
+        align-items: center; /* Menyusun isi secara vertikal di tengah */
+        justify-content: space-between; /* Menyusun isi secara horizontal dengan memberikan ruang yang sama di antara elemen-elemen di dalamnya */
+        height: 100vh; /* Mengisi tinggi penuh halaman */
+        text-align: center; /* Mengatur teks menjadi di tengah */
+        flex-direction: column; /* Mengatur konten menjadi tumpukan vertikal */
+        position: relative; /* Mengatur posisi relatif untuk memungkinkan penempatan absolut */
+    }
+
+    .hero img {
+        position: static; /* Mengembalikan posisi gambar ke posisi standar */
+        margin: 80px ; /* Mengatur margin agar gambar turun sedikit dan berada di tengah secara horizontal */
+        order: -1; /* Mengatur gambar agar berada di atas teks */
+    }
+
+    .hero-content {
+        max-width: 600px;
+        position: static; /* Mengembalikan posisi konten ke posisi standar */
+        margin-top: 20px; /* Menambahkan margin atas agar terpisah dari gambar */
+        text-align: center; /* Mengatur teks menjadi di tengah */
+        max-width: none; /* Menghapus batasan lebar */
+        padding-left: 20px; /* Menambahkan padding kiri agar gambar tidak tertutup */
+    }
+}
+
+  
